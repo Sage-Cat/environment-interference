@@ -1,0 +1,49 @@
+BSS aa:bb:cc:dd:ee:01(on wlan0)
+	freq: 2412
+	signal: -43.00 dBm
+	last seen: 12 ms ago
+	SSID: Lab_AP_24
+	DS Parameter set: channel 1
+
+BSS aa:bb:cc:dd:ee:02(on wlan0)
+	freq: 2437
+	signal: -52.00 dBm
+	last seen: 18 ms ago
+	SSID: Nearby_24_A
+	DS Parameter set: channel 6
+
+BSS aa:bb:cc:dd:ee:03(on wlan0)
+	freq: 2437
+	signal: -61.00 dBm
+	last seen: 19 ms ago
+	SSID: Nearby_24_B
+	DS Parameter set: channel 6
+
+BSS aa:bb:cc:dd:ee:04(on wlan0)
+	freq: 2462
+	signal: -74.00 dBm
+	last seen: 31 ms ago
+	SSID: Far_24
+	DS Parameter set: channel 11
+
+BSS aa:bb:cc:dd:ee:05(on wlan0)
+	freq: 5180
+	signal: -50.00 dBm
+	last seen: 7 ms ago
+	SSID: Lab_AP_5
+	primary channel: 36
+
+BSS aa:bb:cc:dd:ee:06(on wlan0)
+	freq: 5220
+	signal: -67.00 dBm
+	last seen: 21 ms ago
+	SSID: Nearby_5_A
+	primary channel: 44
+
+BSS aa:bb:cc:dd:ee:07(on wlan0)
+	freq: 5745
+	signal: -80.00 dBm
+	last seen: 25 ms ago
+	SSID: Far_5
+	primary channel: 149
+
