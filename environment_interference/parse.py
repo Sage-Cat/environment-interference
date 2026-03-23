@@ -15,6 +15,26 @@ _SURVEY_FREQ_RE = re.compile(r"^frequency:\s*(\d+)\s+MHz(.*)$")
 _SURVEY_VALUE_RE = re.compile(r"^(noise|channel active time|channel busy time|channel receive time|channel transmit time):\s*([-0-9.]+)")
 
 
+def parse_scan_text(text: str, *, scan_format: str = "auto") -> list[BssRecord]:
+    resolved_format = detect_scan_format(text) if scan_format == "auto" else scan_format
+    if resolved_format == "iw":
+        return parse_iw_scan(text)
+    if resolved_format == "nmcli":
+        return parse_nmcli_scan(text)
+    raise ValueError(f"unsupported scan format: {resolved_format}")
+
+
+def detect_scan_format(text: str) -> str:
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        if _BSS_RE.match(line):
+            return "iw"
+        return "nmcli"
+    return "iw"
+
+
 def parse_iw_scan(text: str) -> list[BssRecord]:
     records: list[BssRecord] = []
     current_block: list[str] = []
@@ -32,6 +52,41 @@ def parse_iw_scan(text: str) -> list[BssRecord]:
         parsed = _parse_bss_block(current_block)
         if parsed is not None:
             records.append(parsed)
+    return records
+
+
+def parse_nmcli_scan(text: str) -> list[BssRecord]:
+    records: list[BssRecord] = []
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        fields = split_nmcli_escaped_fields(line)
+        if len(fields) != 8:
+            raise ValueError(f"unexpected nmcli row shape: expected 8 fields, got {len(fields)} in {raw_line!r}")
+        _in_use, ssid, bssid, channel_raw, freq_raw, _rate_raw, signal_raw, _security = fields
+        try:
+            channel = int(channel_raw)
+            signal_pct = int(signal_raw)
+        except ValueError as exc:
+            raise ValueError(f"failed to parse nmcli row: {raw_line!r}") from exc
+        freq_match = re.search(r"(\d+)", freq_raw)
+        freq_mhz = int(freq_match.group(1)) if freq_match else None
+        if freq_mhz is None:
+            freq_mhz = _channel_to_frequency_mhz(channel)
+        if freq_mhz is None:
+            continue
+        records.append(
+            BssRecord(
+                bssid=bssid.lower(),
+                ssid=ssid,
+                freq_mhz=freq_mhz,
+                channel=channel,
+                signal_dbm=None if signal_pct <= 0 else signal_percent_to_dbm(signal_pct),
+                last_seen_ms=None,
+                signal_dbm_estimated=True,
+            )
+        )
     return records
 
 
@@ -83,6 +138,7 @@ def _parse_bss_block(lines: list[str]) -> BssRecord | None:
         channel=channel,
         signal_dbm=signal_dbm,
         last_seen_ms=last_seen_ms,
+        signal_dbm_estimated=False,
     )
 
 
@@ -153,3 +209,38 @@ def _maybe_float(value: object | None) -> float | None:
         return None
     return float(value)
 
+
+def split_nmcli_escaped_fields(line: str, separator: str = ":") -> list[str]:
+    parts: list[str] = []
+    current: list[str] = []
+    escape = False
+    for char in line:
+        if escape:
+            current.append(char)
+            escape = False
+            continue
+        if char == "\\":
+            escape = True
+            continue
+        if char == separator:
+            parts.append("".join(current))
+            current = []
+            continue
+        current.append(char)
+    parts.append("".join(current))
+    return parts
+
+
+def signal_percent_to_dbm(signal_pct: int) -> float:
+    bounded = max(0, min(100, int(signal_pct)))
+    return -100.0 + (bounded / 2.0)
+
+
+def _channel_to_frequency_mhz(channel: int) -> int | None:
+    if channel == 14:
+        return 2484
+    if 1 <= channel <= 13:
+        return 2407 + (channel * 5)
+    if channel >= 30:
+        return 5000 + (channel * 5)
+    return None

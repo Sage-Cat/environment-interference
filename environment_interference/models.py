@@ -13,6 +13,7 @@ class BssRecord:
     channel: int
     signal_dbm: float | None
     last_seen_ms: int | None
+    signal_dbm_estimated: bool = False
 
     @property
     def band(self) -> str:
@@ -48,8 +49,12 @@ class ChannelMetrics:
     ap_count: int
     unique_ssid_count: int
     strong_ap_count: int
+    exact_strong_ap_count: int
+    overlap_ap_count: int
+    overlap_strong_ap_count: int
     congestion_score: float
     strongest_signal_dbm: float | None
+    strongest_exact_signal_dbm: float | None
     survey_busy_ratio: float | None
     survey_noise_dbm: float | None
 
@@ -69,6 +74,27 @@ class BandMetrics:
 
 
 @dataclass(frozen=True)
+class FocusChannelAssessment:
+    band: str
+    channel: int
+    channel_width_mhz: int
+    rank_in_band: int | None
+    recommended_channels: tuple[int, ...]
+    block_label: str | None
+    exact_ap_count: int
+    exact_strong_ap_count: int
+    overlap_ap_count: int
+    overlap_strong_ap_count: int
+    strongest_exact_signal_dbm: float | None
+    strongest_overlap_signal_dbm: float | None
+    congestion_score: float | None
+    survey_busy_ratio: float | None
+    inferred_interference_level: str
+    inferred_radio_load_level: str
+    readiness: str
+
+
+@dataclass(frozen=True)
 class AnalysisReport:
     generated_at_utc: str
     source_description: str
@@ -78,4 +104,6 @@ class AnalysisReport:
     survey_path: str | None
     strong_rssi_threshold_dbm: float
     bands: tuple[BandMetrics, ...]
-
+    collection_backend: str = "unknown"
+    warnings: tuple[str, ...] = ()
+    focus_assessment: FocusChannelAssessment | None = None

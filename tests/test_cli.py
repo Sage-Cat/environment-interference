@@ -39,6 +39,7 @@ def test_cli_analyze_writes_markdown_from_fixture_inputs(tmp_path: Path) -> None
     markdown_path = tmp_path / "fixture_report.md"
     assert markdown_path.is_file()
     text = markdown_path.read_text(encoding="utf-8")
-    assert "## 2.4 GHz" in text
-    assert "## 5 GHz" in text
-    assert "Recommended channels" in text
+    assert "### 2.4 GHz" in text
+    assert "### 5 GHz" in text
+    assert "Experiment Focus" in text
+    assert "Inferred interference level" in text

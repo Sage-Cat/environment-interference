@@ -20,6 +20,10 @@ def test_analyze_environment_separates_bands_and_recommends_channels() -> None:
         scan_path="sample_scan.txt",
         survey_path="sample_survey.txt",
         strong_rssi_threshold_dbm=-67.0,
+        collection_backend="iw",
+        focus_band="5 GHz",
+        focus_channel=36,
+        focus_width_mhz=20,
     )
 
     band_24 = next(band for band in report.bands if band.band == "2.4 GHz")
@@ -28,5 +32,7 @@ def test_analyze_environment_separates_bands_and_recommends_channels() -> None:
     assert band_24.ap_count == 4
     assert band_24.recommended_channels[0] == 11
     assert band_5.ap_count == 3
-    assert band_5.recommended_channels[0] == 149
-
+    assert band_5.recommended_channels[0] == 52
+    assert report.focus_assessment is not None
+    assert report.focus_assessment.channel == 36
+    assert report.focus_assessment.inferred_interference_level in {"L2", "L3"}

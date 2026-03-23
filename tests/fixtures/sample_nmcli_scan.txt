@@ -1,0 +1,5 @@
+*:Lab\:AP\:5G:AA\:BB\:CC\:DD\:EE\:05:36:5180 MHz:270 Mbit/s:80:WPA2
+ :Neighbor\:A:AA\:BB\:CC\:DD\:EE\:06:44:5220 MHz:270 Mbit/s:66:WPA2
+ :Neighbor\:Upper:AA\:BB\:CC\:DD\:EE\:07:149:5745 MHz:270 Mbit/s:40:WPA2
+ :Lab\:AP\:24:AA\:BB\:CC\:DD\:EE\:01:1:2412 MHz:270 Mbit/s:74:WPA2
+ :Neighbor24:AA\:BB\:CC\:DD\:EE\:02:6:2437 MHz:130 Mbit/s:56:WPA2
