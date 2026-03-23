@@ -1,0 +1,26 @@
+*:EOM:5C\:62\:8B\:36\:83\:E0:44:5220 MHz:270 Mbit/s:61:WPA2
+ :lab705_wifi:00\:72\:63\:2B\:70\:60:1:2412 MHz:270 Mbit/s:0:WPA1 WPA2
+ :Galaxy A51 8595:F2\:E2\:1B\:BB\:BF\:17:1:2412 MHz:117 Mbit/s:0:WPA2
+ :1ebb1a58:F4\:91\:1E\:BB\:1A\:58:1:2412 MHz:65 Mbit/s:0:WPA2
+ :1e5911a8:F4\:91\:1E\:59\:11\:A8:1:2412 MHz:65 Mbit/s:0:WPA2
+ :williams_ssid:C0\:C1\:C0\:C2\:0C\:CB:2:2417 MHz:0 Mbit/s:0:WEP
+ :EOM:5C\:62\:8B\:36\:83\:E1:3:2422 MHz:270 Mbit/s:0:WPA2
+ ::5E\:62\:8B\:26\:83\:E1:3:2422 MHz:270 Mbit/s:0:WPA2
+ :Domin:EC\:75\:0C\:AD\:6A\:F3:3:2422 MHz:270 Mbit/s:0:WPA2
+ ::F2\:09\:0D\:28\:DB\:C8:4:2427 MHz:405 Mbit/s:0:WPA2
+ ::C6\:B2\:5B\:D6\:2F\:45:6:2437 MHz:270 Mbit/s:0:WPA1 WPA2
+ :Nest:C6\:B2\:5B\:86\:2F\:45:6:2437 MHz:270 Mbit/s:0:WPA1 WPA2
+ :Xiaomi_2.4:50\:4F\:3B\:20\:FC\:69:6:2437 MHz:130 Mbit/s:0:WPA2
+ ::56\:4F\:3B\:20\:FC\:69:6:2437 MHz:130 Mbit/s:0:
+ :A55 Yelyzaveta:AE\:BB\:75\:E6\:F8\:7D:6:2437 MHz:130 Mbit/s:0:WPA2
+ ::9A\:BA\:5F\:24\:EF\:7D:8:2447 MHz:270 Mbit/s:0:WPA2
+ :611VVA:04\:95\:E6\:7E\:4F\:41:9:2452 MHz:405 Mbit/s:0:WPA1 WPA2
+ ::E6\:FA\:C4\:23\:25\:60:9:2452 MHz:270 Mbit/s:0:WPA2
+ :istr_NMR:90\:9A\:4A\:C4\:63\:60:11:2462 MHz:270 Mbit/s:0:WPA2
+ :ts:EE\:F8\:F5\:8C\:5D\:53:11:2462 MHz:130 Mbit/s:0:WPA2
+ :Yana:7E\:0C\:83\:F3\:DA\:BC:11:2462 MHz:65 Mbit/s:0:WPA2
+ :Redmi Note 11 Pro:4A\:5D\:58\:F3\:3A\:A0:13:2472 MHz:117 Mbit/s:0:WPA2
+ :A³:EE\:BC\:8D\:67\:6E\:F2:13:2472 MHz:117 Mbit/s:0:WPA2
+ :TP-Link_512_5G:F0\:09\:0D\:78\:DB\:CA:40:5200 MHz:405 Mbit/s:0:WPA2
+ ::F2\:09\:0D\:68\:DB\:C8:40:5200 MHz:405 Mbit/s:0:WPA2
+ ::5E\:62\:8B\:56\:83\:E1:44:5220 MHz:270 Mbit/s:0:WPA2
