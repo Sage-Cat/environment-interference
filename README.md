@@ -61,7 +61,28 @@ python3 -m environment_interference.cli analyze \
   --focus-channel 36
 ```
 
-### 3. Raw collection only
+### 3. Repeated 5 GHz experiment-facing series
+
+```bash
+python3 -m environment_interference.cli analyze-series \
+  --interface wlan0 \
+  --location-label "Lab 314" \
+  --report-name lab_314_series \
+  --focus-band 5ghz \
+  --focus-channel 36 \
+  --focus-width-mhz 20 \
+  --repeat-count 8 \
+  --repeat-interval-s 5 \
+  --exclude-ssid my_experiment_ap
+```
+
+This writes the ordinary aggregate report plus:
+
+- `*.scan.01.txt`, `*.scan.02.txt`, ... raw repeated-scan snapshots
+- `*.series.md` repeated-scan stability report for the focus channel/block
+- `*.series.json` machine-readable repeated-scan summary
+
+### 4. Raw collection only
 
 ```bash
 python3 -m environment_interference.cli collect \

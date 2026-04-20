@@ -8,6 +8,7 @@ from .collect import CollectionError, collect_scan_text, collect_survey_text, de
 from .metrics import analyze_environment
 from .parse import parse_iw_survey, parse_scan_text
 from .report import ReportError, write_report_files
+from .series import analyze_scan_series, collect_scan_series
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -66,6 +67,47 @@ def build_parser() -> argparse.ArgumentParser:
     )
     analyze_parser.add_argument("--skip-pdf", action="store_true", help="Write Markdown only.")
     analyze_parser.set_defaults(func=_cmd_analyze)
+
+    series_parser = subparsers.add_parser(
+        "analyze-series",
+        help="Collect repeated live scans and generate an experiment-facing 5 GHz stability report.",
+    )
+    series_parser.add_argument("--interface", required=True, help="Wireless interface, for example wlan0.")
+    series_parser.add_argument(
+        "--backend",
+        choices=("auto", "iw", "nmcli"),
+        default="auto",
+        help="Live scanner backend (default: auto).",
+    )
+    series_parser.add_argument("--output-dir", default="out/series", help="Directory for report artifacts.")
+    series_parser.add_argument("--report-name", default=None, help="Base name for generated artifacts.")
+    series_parser.add_argument("--location-label", default="unspecified location", help="Human-readable experiment site.")
+    series_parser.add_argument("--notes", default="", help="Free-form notes for the report.")
+    series_parser.add_argument(
+        "--strong-rssi-threshold-dbm",
+        type=float,
+        default=-67.0,
+        help="Threshold for strong neighboring APs (default: -67 dBm).",
+    )
+    series_parser.add_argument("--focus-band", default="5ghz", help="Experiment focus band, for example 5ghz.")
+    series_parser.add_argument("--focus-channel", type=int, default=36, help="Experiment focus channel (default: 36).")
+    series_parser.add_argument("--focus-width-mhz", type=int, default=20, help="Experiment focus channel width (default: 20).")
+    series_parser.add_argument("--repeat-count", type=int, default=8, help="Number of live scan samples to collect.")
+    series_parser.add_argument("--repeat-interval-s", type=float, default=5.0, help="Seconds between repeated scans.")
+    series_parser.add_argument(
+        "--exclude-ssid",
+        action="append",
+        default=[],
+        help="SSID to exclude before interference scoring. May be repeated.",
+    )
+    series_parser.add_argument(
+        "--exclude-bssid",
+        action="append",
+        default=[],
+        help="BSSID to exclude before interference scoring. May be repeated.",
+    )
+    series_parser.add_argument("--skip-pdf", action="store_true", help="Write Markdown only.")
+    series_parser.set_defaults(func=_cmd_analyze_series)
     return parser
 
 
@@ -163,6 +205,47 @@ def _cmd_analyze(args: argparse.Namespace) -> int:
     print(f"backend: {backend}")
     print(f"markdown: {markdown_path}")
     print(f"pdf: {pdf_path if pdf_path is not None else 'skipped'}")
+    return 0
+
+
+def _cmd_analyze_series(args: argparse.Namespace) -> int:
+    output_dir = Path(args.output_dir)
+    report_name = args.report_name or _default_prefix("environment_interference_series")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    backend, samples, scan_path, survey_path = collect_scan_series(
+        interface=args.interface,
+        output_dir=output_dir,
+        report_name=report_name,
+        backend=args.backend,
+        repeat_count=args.repeat_count,
+        repeat_interval_s=args.repeat_interval_s,
+    )
+    summary = analyze_scan_series(
+        interface=args.interface,
+        backend=backend,
+        samples=samples,
+        location_label=args.location_label,
+        notes=args.notes,
+        scan_path=scan_path or "",
+        survey_path=survey_path,
+        strong_rssi_threshold_dbm=args.strong_rssi_threshold_dbm,
+        focus_band=args.focus_band,
+        focus_channel=args.focus_channel,
+        focus_width_mhz=args.focus_width_mhz,
+        repeat_interval_s=args.repeat_interval_s,
+        exclude_ssids=tuple(args.exclude_ssid),
+        exclude_bssids=tuple(args.exclude_bssid),
+        output_dir=output_dir,
+        report_name=report_name,
+        write_pdf=not args.skip_pdf,
+    )
+    print(f"backend: {backend}")
+    print(f"samples: {summary.sample_count}")
+    print(f"aggregate_markdown: {summary.aggregate_report_markdown_path}")
+    print(f"aggregate_pdf: {summary.aggregate_report_pdf_path or 'skipped'}")
+    print(f"series_markdown: {output_dir / (report_name + '.series.md')}")
+    print(f"series_json: {output_dir / (report_name + '.series.json')}")
     return 0
 
 
