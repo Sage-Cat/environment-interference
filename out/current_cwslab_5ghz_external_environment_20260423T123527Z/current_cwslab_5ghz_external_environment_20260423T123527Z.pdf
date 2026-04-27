@@ -1,0 +1,251 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2179 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+54 760 Td
+(Scientific Wi-Fi Environment Interference Report) Tj
+T* () Tj
+T* (Abstract) Tj
+T* () Tj
+T* (This report characterizes the current laboratory Wi-Fi field with emphasis on `5 GHz`) Tj
+T* (channel `36` at `20 MHz`, which is the planned operating point for `cws-lab`. The target) Tj
+T* (channel currently maps to interference level `L3` and radio-load level `L1`, while the) Tj
+T* (lowest modeled alternatives in-band are `52, 56, 60`.) Tj
+T* () Tj
+T* (Measurement Setup) Tj
+T* () Tj
+T* (- Generated at \(UTC\): `2026-04-23T12:37:49Z`) Tj
+T* (- Source: `live nmcli repeated collection from interface wlp3s0 \(8 scans, 5.0 s interval\)`) Tj
+T* (- Collection backend: `nmcli`) Tj
+T* (- Location: `Current cws-lab room`) Tj
+T* (- Strong-neighbor threshold: `-67.0 dBm`) Tj
+T* (- Scan source: `out/current_cwslab_5ghz_external_environment_20260423T123527Z/current_cwslab) Tj
+T* (_5ghz_external_environment_20260423T123527Z.scan.txt`) Tj
+T* (- Survey source: `not available`) Tj
+T* (- Notes: Repeated ambient 5 GHz environment scan for cws-lab experiments on April 23, 2026) Tj
+T* (on channel 36 at 20 MHz; both cws-lab SSIDs excluded from interference scoring so the report) Tj
+T* (reflects external surrounding radio only.) Tj
+T* () Tj
+T* (Executive Summary) Tj
+T* () Tj
+T* (- **2.4 GHz**: `26` APs observed, `2` strong emitters, recommended channels `1, 2, 11`.) Tj
+T* (- **5 GHz**: `3` APs observed, `2` strong emitters, recommended channels `52, 56, 60`.) Tj
+T* (- **Focus assessment**: `5 GHz` channel `36` / `20 MHz` maps to interference level `L3` and) Tj
+T* (radio-load level `L1`.) Tj
+T* () Tj
+T* (5 GHz Experiment Focus) Tj
+T* () Tj
+T* (Metric Value) Tj
+T* (--- ---) Tj
+T* (Focus channel 36) Tj
+T* (Focus width 20 MHz) Tj
+T* (Rank within band 23) Tj
+T* (5 GHz block 36-48) Tj
+T* (Exact-channel APs 2) Tj
+T* (Exact-channel strong APs 2) Tj
+T* (Overlapping / same-block APs 2) Tj
+T* (Overlapping / same-block strong APs 2) Tj
+T* (Strongest exact signal -56.5 dBm) Tj
+T* (Strongest overlap signal -56.5 dBm) Tj
+T* (Congestion score 1.500) Tj
+T* (Survey busy ratio n/a) Tj
+T* (Inferred interference level L3) Tj
+T* (Inferred radio-load level L1) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1957 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+54 760 Td
+(Recommended in-band channels 52, 56, 60) Tj
+T* () Tj
+T* (Interpretation:) Tj
+T* (- The channel should be retuned or the environment should be isolated before claiming a) Tj
+T* (clean cws-lab baseline.) Tj
+T* (- The current channel state should be treated as `L3` for interference and `L1` for radio) Tj
+T* (loading when mapping the lab to `L0-L2` cws-lab assumptions.) Tj
+T* (- This channel should not be described as a clean `L0` baseline without extra isolation or a) Tj
+T* (channel move.) Tj
+T* () Tj
+T* (Observed Band Results) Tj
+T* () Tj
+T* () Tj
+T* (2.4 GHz) Tj
+T* () Tj
+T* (Metric Value) Tj
+T* (--- ---) Tj
+T* (AP count 26) Tj
+T* (Unique SSID count 20) Tj
+T* (Strong-neighbor count 2) Tj
+T* (Median signal \(dBm\) -83.00) Tj
+T* (Mean survey busy ratio n/a) Tj
+T* (Mean noise floor \(dBm\) n/a) Tj
+T* (Recommended channels 1, 2, 11) Tj
+T* () Tj
+T* (Channel Occupancy) Tj
+T* () Tj
+T* (Channel Exact APs Exact Strong Overlap APs Overlap Strong Congestion Strongest Exact) Tj
+T* (Strongest Overlap Survey Busy Noise) Tj
+T* (--- ---: ---: ---: ---: ---: ---: ---: ---: ---:) Tj
+T* (1 7 0 13 0 0.930 -80.0 dBm -75.0 dBm n/a n/a) Tj
+T* (2 1 0 20 0 1.320 -92.5 dBm -73.0 dBm n/a n/a) Tj
+T* (3 3 0 20 0 1.673 -77.5 dBm -73.0 dBm n/a n/a) Tj
+T* (4 2 0 20 0 2.035 -75.0 dBm -73.0 dBm n/a n/a) Tj
+T* (6 7 0 16 2 2.445 -73.0 dBm -52.5 dBm n/a n/a) Tj
+T* (9 2 2 13 2 2.580 -52.5 dBm -52.5 dBm n/a n/a) Tj
+T* (10 1 0 13 2 2.055 -80.0 dBm -52.5 dBm n/a n/a) Tj
+T* (11 3 0 6 2 1.410 -87.5 dBm -52.5 dBm n/a n/a) Tj
+T* () Tj
+T* (Strongest Nearby APs) Tj
+T* () Tj
+T* (SSID BSSID Channel Signal Estimated Last seen) Tj
+T* (--- --- --- --- --- ---) Tj
+T* (EOM `5c:62:8b:36:83:e1` 9 -52.5 dBm yes n/a) Tj
+T* (<hidden> `5e:62:8b:26:83:e1` 9 -53.0 dBm yes n/a) Tj
+T* (A55 ???????? `6a:8b:e4:1b:1e:7b` 6 -73.0 dBm yes n/a) Tj
+T* (<hidden> `f2:09:0d:28:db:c8` 4 -75.0 dBm yes n/a) Tj
+T* (TP-Link_512 `f0:09:0d:78:db:c8` 4 -75.0 dBm yes n/a) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1946 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+54 760 Td
+() Tj
+T* (Interpretation) Tj
+T* () Tj
+T* (- Highest modeled congestion is on channel `9` with score `2.580`.) Tj
+T* (- Lowest modeled congestion is on channel `1` with score `0.930`.) Tj
+T* (- Recommended channels for experiments in this band: `1, 2, 11`.) Tj
+T* (- Airtime utilization counters were not available, so interpretation is driven mainly by) Tj
+T* (neighboring AP presence and signal strength.) Tj
+T* () Tj
+T* (5 GHz) Tj
+T* () Tj
+T* (Metric Value) Tj
+T* (--- ---) Tj
+T* (AP count 3) Tj
+T* (Unique SSID count 3) Tj
+T* (Strong-neighbor count 2) Tj
+T* (Median signal \(dBm\) -56.50) Tj
+T* (Mean survey busy ratio n/a) Tj
+T* (Mean noise floor \(dBm\) n/a) Tj
+T* (Recommended channels 52, 56, 60) Tj
+T* () Tj
+T* (Channel Occupancy) Tj
+T* () Tj
+T* (Channel Exact APs Exact Strong Overlap APs Overlap Strong Congestion Strongest Exact) Tj
+T* (Strongest Overlap Survey Busy Noise) Tj
+T* (--- ---: ---: ---: ---: ---: ---: ---: ---: ---:) Tj
+T* (36 2 2 2 2 1.500 -56.5 dBm -56.5 dBm n/a n/a) Tj
+T* (40 0 0 2 2 0.825 n/a -56.5 dBm n/a n/a) Tj
+T* (44 0 0 2 2 0.450 n/a -56.5 dBm n/a n/a) Tj
+T* (48 0 0 2 2 0.450 n/a -56.5 dBm n/a n/a) Tj
+T* (52 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (56 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (60 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (64 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (100 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (104 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (108 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (112 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (116 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (120 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (124 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (128 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (132 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (136 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (140 0 0 0 0 0.000 n/a n/a n/a n/a) Tj
+T* (149 0 0 1 0 0.060 n/a -80.0 dBm n/a n/a) Tj
+T* (153 0 0 1 0 0.060 n/a -80.0 dBm n/a n/a) Tj
+T* (157 1 0 1 0 0.200 -80.0 dBm -80.0 dBm n/a n/a) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 1205 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+54 760 Td
+(161 0 0 1 0 0.110 n/a -80.0 dBm n/a n/a) Tj
+T* () Tj
+T* (Strongest Nearby APs) Tj
+T* () Tj
+T* (SSID BSSID Channel Signal Estimated Last seen) Tj
+T* (--- --- --- --- --- ---) Tj
+T* (<hidden> `5e:62:8b:56:83:e1` 36 -56.5 dBm yes n/a) Tj
+T* (EOM `5c:62:8b:36:83:e0` 36 -56.5 dBm yes n/a) Tj
+T* (moto g72_3229 `ae:e6:3f:28:28:0a` 157 -80.0 dBm yes n/a) Tj
+T* () Tj
+T* (Interpretation) Tj
+T* () Tj
+T* (- Highest modeled congestion is on channel `36` with score `1.500`.) Tj
+T* (- Lowest modeled congestion is on channel `52` with score `0.000`.) Tj
+T* (- Recommended channels for experiments in this band: `52, 56, 60`.) Tj
+T* (- Airtime utilization counters were not available, so interpretation is driven mainly by) Tj
+T* (neighboring AP presence and signal strength.) Tj
+T* () Tj
+T* (Methodological Limitations) Tj
+T* () Tj
+T* (- Signal levels were estimated from `nmcli` quality percentages, so absolute dBm values) Tj
+T* (should be treated as approximate.) Tj
+T* (- Channel-survey airtime utilization was not available because `nmcli` does not expose `iw) Tj
+T* (survey dump` counters.) Tj
+T* (- One or more SSID/BSSID filters were applied before interference scoring.) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000210 00000 n 
+0000002441 00000 n 
+0000002567 00000 n 
+0000004576 00000 n 
+0000004702 00000 n 
+0000006700 00000 n 
+0000006826 00000 n 
+0000008084 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+8212
+%%EOF
