@@ -1,0 +1,27 @@
+ :cwslab-rpi5-node-c-24g:2E\:CF\:67\:B4\:C1\:66:6:2437 MHz:65 Mbit/s:100:WPA2
+ :cwslab-exp1-main-5g:1E\:F4\:3F\:F0\:3D\:A7:36:5180 MHz:260 Mbit/s:100:WPA2
+ :cwslab-rpi5-exp-5g:2E\:CF\:67\:D4\:44\:D5:36:5180 MHz:117 Mbit/s:95:WPA2
+ ::5E\:62\:8B\:56\:83\:E1:36:5180 MHz:270 Mbit/s:94:WPA2
+ :EOM:5C\:62\:8B\:36\:83\:E1:7:2442 MHz:270 Mbit/s:92:WPA2
+ ::5E\:62\:8B\:26\:83\:E1:7:2442 MHz:270 Mbit/s:89:WPA2
+ :dlink-rustview:00\:24\:01\:BC\:42\:E5:6:2437 MHz:54 Mbit/s:80:WPA1 WPA2
+*:EOM:5C\:62\:8B\:36\:83\:E0:36:5180 MHz:270 Mbit/s:70:WPA2
+ ::42\:ED\:00\:23\:BC\:DE:5:2432 MHz:405 Mbit/s:65:WPA1 WPA2
+ :EOM:40\:ED\:00\:63\:BC\:DE:5:2432 MHz:405 Mbit/s:64:WPA2
+ :TP-Link_512:F0\:09\:0D\:78\:DB\:C8:4:2427 MHz:405 Mbit/s:54:WPA2
+ :1e5911a8:F4\:91\:1E\:59\:11\:A8:1:2412 MHz:65 Mbit/s:50:WPA2
+ ::42\:ED\:00\:53\:BC\:DE:44:5220 MHz:405 Mbit/s:50:WPA1 WPA2
+ :EOM_5Ghz:40\:ED\:00\:63\:BC\:E0:44:5220 MHz:405 Mbit/s:50:WPA2
+ :1ebb1a58:F4\:91\:1E\:BB\:1A\:58:1:2412 MHz:65 Mbit/s:44:WPA2
+ :Nest:C6\:B2\:5B\:86\:2F\:45:6:2437 MHz:270 Mbit/s:42:WPA1 WPA2
+ :williams_ssid:C0\:C1\:C0\:C2\:0C\:CB:3:2422 MHz:54 Mbit/s:30:WEP
+ :314:B0\:4E\:26\:2F\:E0\:AE:11:2462 MHz:270 Mbit/s:30:WPA2
+ :Band2612:5C\:92\:5E\:4A\:7C\:6C:2:2417 MHz:270 Mbit/s:29:WPA2
+ ::9A\:BA\:5F\:24\:EF\:7D:8:2447 MHz:270 Mbit/s:29:WPA2
+ :EcoCity-083AF2AAC88C:08\:3A\:F2\:AA\:C8\:8D:11:2462 MHz:135 Mbit/s:29:
+ :TP-LINK_AD1C:18\:D6\:C7\:71\:AD\:1C:6:2437 MHz:135 Mbit/s:25:WPA2
+ :kafedra_308:5C\:A6\:E6\:6F\:74\:5A:2:2417 MHz:270 Mbit/s:24:WPA2
+ :UKrtelecom_HT2Q86:50\:0F\:F5\:37\:68\:E9:4:2427 MHz:270 Mbit/s:24:WPA2
+ :meteo:AC\:7E\:8A\:A8\:74\:D1:11:2462 MHz:130 Mbit/s:22:WPA2
+ :VeteransCenter:54\:A2\:74\:40\:60\:73:1:2412 MHz:195 Mbit/s:20:WPA2
+ :istr_NMR:90\:9A\:4A\:C4\:63\:60:11:2462 MHz:270 Mbit/s:20:WPA2
